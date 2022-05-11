@@ -1,12 +1,14 @@
 const ratingNum = document.querySelectorAll('.btn');
 const selected = document.querySelector("#selected");
-
+let selectedButton = 0;
 
 for (let i = 0; i < ratingNum.length; i++) {
     
 ratingNum[i].addEventListener('click', function(){
     ratingNum[i].classList.add('active');
+    ratingNum[selectedButton].classList.remove('active');    
     selected.innerHTML = i+1
+    selectedButton = i;
 
 })
 }
